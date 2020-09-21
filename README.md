@@ -13,3 +13,13 @@ const render = () => {
 const render = (el) => {
     el.innerHTML = 'hi'   ----- не чистая функция
 }
+
+---------------------------------------------------------------------------
+
+const bindActionCreator = (creator, dispatch) => (...args) => {
+    dispatch(creator(...args));
+};
+
+const incDispatch = bindActionCreator(inc, dispatch);
+const decDispatch = bindActionCreator(dec, dispatch);
+const rndDispatch = bindActionCreator(rnd, dispatch);
